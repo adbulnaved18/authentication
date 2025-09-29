@@ -63,7 +63,7 @@ app.post('/register',async(req,res)=>{
     })
 })
 function isLoggedIn(req,res,next){
-    if(req.cookies.token =="")res.send("you must be logged in ");
+    if(req.cookies.token =="")res.send("you must be logged in before doing something ");
     else{
         let data = jwt.verify(req.cookies.token,"shhhh");
         req.user = data;
